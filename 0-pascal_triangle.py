@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''define a pascxal triangle function'''
 
 def pascal_triangle(n):
+    '''define a pascxal triangle function'''
     if n <= 0:
         return []
 
