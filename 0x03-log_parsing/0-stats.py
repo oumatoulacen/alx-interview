@@ -49,6 +49,7 @@ try:
                     print("{}: {}".format(key, value))
             counter = 0
 except KeyboardInterrupt:
+    print("Total Size:", total_size)
     for key, value in sorted(status_codes.items()):
         if value != 0:
             print("{}: {}".format(key, value))
