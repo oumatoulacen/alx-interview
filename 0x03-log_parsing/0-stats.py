@@ -20,7 +20,9 @@ total_size = 0
 try:
     for line in sys.stdin:
         # Process each line here
-        pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - \[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6})\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)')
+        ptrn = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - '
+                          r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6})\]'
+                          r' "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)')
         # 66.188.213.199 - [2024-01-24 03:20:39.705614] "GET \
         # /projects/260 HTTP/1.1" 301 728 48
         # <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" \
@@ -30,7 +32,7 @@ try:
         # "GET /projects/260 HTTP/1.1" 301 728 48'
         # match = pattern.match(text.strip())
 
-        match = pattern.match(line.strip())
+        match = ptrn.match(line.strip())
         if match:
             status_code = match.group(3)
             file_size = match.group(4)
