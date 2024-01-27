@@ -40,7 +40,7 @@ except KeyboardInterrupt:
     print_all()
 
 
-#--------- the one who supposed to be correct---------#
+# --------- the one who supposed to be if no checker---------#
 # #!/usr/bin/python3
 # ''' stats module '''
 
@@ -70,9 +70,9 @@ except KeyboardInterrupt:
 #         # /projects/260 HTTP/1.1" 301 728 48
 #         # <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" \
 #         # <status code> <file size>
-#         # pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - \[(\d{4}-\d{2}-\d{2} \
-#         # eg: text = '66.188.213.199 - [2024-01-24 03:20:39.705614] \
-#         # "GET /projects/260 HTTP/1.1" 301 728 48'
+#         # pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - \[(\d{4}-\d{2}-\d{2}
+#         # eg: text = '66.188.213.199 - [2024-01-24 03:20:39.705614]/
+#         #  "GET /projects/260 HTTP/1.1" 301 728 48'
 #         # match = pattern.match(text.strip())
 
 #         match = ptrn.match(line.strip())
