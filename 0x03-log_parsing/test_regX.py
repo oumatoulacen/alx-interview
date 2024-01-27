@@ -12,7 +12,7 @@ pattern = re.compile(r'\d+')
 match_iter = re.finditer(r'\d+', 'abc123xyz456')
 # for match in match_iter:
 #     print(match.group())
-# print([match.group() for match in match_iter])
+print([match.group() for match in match_iter])
 
 # match_obj = re.match(r'(\d+)(\w+)', '123abc')
 # all_groups = match_obj.groups()
