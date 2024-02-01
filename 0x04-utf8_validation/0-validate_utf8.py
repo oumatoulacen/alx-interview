@@ -1,27 +1,34 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''determines if a given data set represents a valid UTF-8 encoding.'''
 
 
 def validUTF8(data):
     '''determines if a given data set represents a valid UTF-8 encoding.'''
-    n_bytes = 0
-    mask1 = 1 << 7
-    print(mask1)
-    mask2 = 1 << 6
-    print(mask2)
     
-    for num in data:
-        mask = 1 << 7
-        if n_bytes == 0:
-            while mask & num:
-                n_bytes += 1
-                mask = mask >> 1
-            if n_bytes == 0:
-                continue
-            if n_bytes == 1 or n_bytes > 4:
+    def is_start_of_char(byte):
+        '''check if a given byte is a valid start of a UTF-8 character'''
+        return (byte & 0b10000000) == 0b00000000
+    
+    def is_valid_following_bytes(num_following):
+        '''check if the number of following bytes is valid'''
+        return 1 <= num_following <= 3
+    
+    i = 0
+    while i < len(data):
+        '''Get the number of following bytes based on the first byte'''
+        leading_bits = bin(data[i])[2:].zfill(8)
+        num_following_bytes = leading_bits.find('0', 1)
+        
+        if not is_valid_following_bytes(num_following_bytes):
+            '''Check if the number of following bytes is valid'''
+            return False
+        
+        for j in range(1, num_following_bytes + 1):
+            '''Check if the current byte is a valid continuation byte'''
+            if i + j >= len(data) or not is_start_of_char(data[i + j]):
                 return False
-        else:
-            if not (num & mask1 and not (num & mask2)):
-                return False
-        n_bytes -= 1
-    return n_bytes == 0
+        
+        # Move to the next character
+        i += num_following_bytes + 1
+    
+    return True
