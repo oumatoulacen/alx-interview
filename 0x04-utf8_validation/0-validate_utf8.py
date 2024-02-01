@@ -7,5 +7,4 @@ def validUTF8(data):
     for i in data:
         if i >= 128:
             return False
-        
     return True
