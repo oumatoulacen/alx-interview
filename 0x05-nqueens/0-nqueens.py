@@ -42,8 +42,17 @@ class solution:
                 negDiag.remove(row - c)
                 board[row][c] = '.'
         backtrack(0)
-        return res
+
+        def format_result(res):
+            for solution in res:
+                formatted_solution = []
+                for i in range(len(solution)):
+                    for j in range(len(solution[i])):
+                        if solution[i][j] == 'Q':
+                            formatted_solution.append([i, j])
+                print(formatted_solution)
+        format_result(res)
 
 
-s = solution()
-print(s.solveNquens(N))
+sol = solution()
+sol.solveNquens(N)
