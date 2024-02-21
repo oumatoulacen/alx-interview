@@ -13,14 +13,14 @@ if (process.argv.length !== 3) {
 
 const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2] + '/';
 
-request(url, function (error, response, body) {
+request(url, async function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
     const characters = JSON.parse(body).characters;
 
     for (let i = 0; i < characters.length; i++) {
-      request(character[i], function (error, response, body) {
+      await request(characters[i], function (error, response, body) {
         if (error) {
           console.log(error);
         } else {
