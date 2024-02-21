@@ -11,15 +11,16 @@ if (process.argv.length !== 3) {
   process.exit(1);
 }
 
-const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2] + '/'
+const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2] + '/';
 
 request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
     const characters = JSON.parse(body).characters;
-    for (const character of characters) {
-      request(character, function (error, response, body) {
+
+    for (let i = 0; i < characters.length; i++) {
+      request(character[i], function (error, response, body) {
         if (error) {
           console.log(error);
         } else {
