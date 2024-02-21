@@ -4,9 +4,13 @@
     - You must use the Star wars API with the endpoint https://swapi-api.hbtn.io/api/films/:id
     - You must use the module request
 */
-
-
 const request = require('request');
+
+if (process.argv.length !== 3) {
+  console.log('Usage: ./0-starwars_characters.js <film_id>');
+  process.exit(1);
+}
+
 const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 
 request(url, function (error, response, body) {
@@ -24,5 +28,4 @@ request(url, function (error, response, body) {
       });
     }
   }
-})
-
+});
