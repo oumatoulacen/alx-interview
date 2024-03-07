@@ -2,10 +2,12 @@
 ''' 0-island_perimeter.py: This module contains a function that returns
 the perimeter of the island described in grid. '''
 
+
 def island_perimeter(grid):
-    ''' island_perimeter: Returns the perimeter of the island described in grid.
+    ''' island_perimeter: Returns the perimeter of the island
+    described in grid.
     Args:
-        grid: A list of list of integers.
+        grid: 2D list representing a grid map of 1s (land) and 0s (water).
     Returns:
         The perimeter of the island described in grid.
     '''
