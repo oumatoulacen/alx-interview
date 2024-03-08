@@ -1,4 +1,6 @@
-# 0x08-making_change
+# 0x08-making_change 📚
+
+This repository contains the code for the "Making Change" project. 💰💡
 
 ## Concepts Needed
 
