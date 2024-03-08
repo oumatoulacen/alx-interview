@@ -31,7 +31,7 @@ Additional information:
 
 - **GeeksforGeeks Articles**
   - [Coin Change | DP-7](https://www.geeksforgeeks.org/coin-change-dp-7/)
-    - [Greedy Algorithm to find Minimum number of Coins](https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/)
+  - [Greedy Algorithm to find Minimum number of Coins](https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/)
 
 - **YouTube Tutorials**
   - [The Change Making Problem - Fewest Coins To Make Change Dynamic Programming](https://www.youtube.com/watch?v=jgiZlGzXMBw)
