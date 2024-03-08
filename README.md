@@ -7,7 +7,7 @@ Welcome to my awesome repository! Here are some resources that you might find he
 ## ALX Resources
 
 - [ALX School](https://www.alx.school/) - Official website of ALX, a software engineering program.
-- [ALX GitHub Repository](https://github.com/alx-apply) - ALX's official GitHub repository with code examples and projects.
+- [ALX GitHub Repository](https://github.com/alx) - ALX's official GitHub repository with code examples and projects.
 
 ## Job Interview Resources
 
