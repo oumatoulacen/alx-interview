@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' module for prime game'''
 
+
 def is_prime(num):
     ''' checks if a number is prime'''
     if num < 2:
@@ -9,6 +10,7 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
+
 
 def isWinner(x, nums):
     ''' determines the winner of the game'''
@@ -23,7 +25,7 @@ def isWinner(x, nums):
             ben_wins += 1
         else:
             maria_wins += 1
-    
+
     if maria_wins == ben_wins:
         return None
     elif maria_wins > ben_wins:
