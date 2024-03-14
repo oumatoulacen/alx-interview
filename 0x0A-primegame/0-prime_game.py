@@ -2,6 +2,7 @@
 ''' module for prime game'''
 
 def is_prime(num):
+    ''' checks if a number is prime'''
     if num < 2:
         return False
     for i in range(2, int(num ** 0.5) + 1):
@@ -10,6 +11,7 @@ def is_prime(num):
     return True
 
 def isWinner(x, nums):
+    ''' determines the winner of the game'''
     maria_wins = 0
     ben_wins = 0
 
