@@ -8,7 +8,7 @@ if (process.argv.length !== 3) {
 
 const id = process.argv[2];
 
-const fetch_character = async (character) => {
+const fetchCharacter = async (character) => {
   return new Promise((resolve, reject) => {
     request(character, function (error, response, body) {
       if (error) {
@@ -27,7 +27,7 @@ request(`https://swapi-api.alx-tools.com/api/films/${id}/`, async function (erro
     const characters = JSON.parse(body).characters;
     for (const character of characters) {
       try {
-        console.log(await fetch_character(character));
+        console.log(await fetchCharacter(character));
       } catch (error) {
         console.error('error:', error);
       }
