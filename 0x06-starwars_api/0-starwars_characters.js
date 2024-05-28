@@ -1,9 +1,4 @@
 #!/usr/bin/node
-/* Write a script that prints all characters of a Star Wars movie:
-    - The first argument is the movie ID
-    - You must use the Star wars API with the endpoint https://swapi-api.hbtn.io/api/films/:id
-    - You must use the module request
-*/
 const request = require('request');
 
 if (process.argv.length !== 3) {
@@ -11,22 +6,31 @@ if (process.argv.length !== 3) {
   process.exit(1);
 }
 
-const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2] + '/';
+const id = process.argv[2];
 
-request(url, async function (error, response, body) {
+const fetch_character = async (character) => {
+  return new Promise((resolve, reject) => {
+    request(character, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.parse(body).name);
+      }
+    });
+  });
+};
+
+request(`https://swapi-api.alx-tools.com/api/films/${id}/`, async function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error('error:', error);
   } else {
     const characters = JSON.parse(body).characters;
-
-    for (let i = 0; i < characters.length; i++) {
-      await request(characters[i], function (error, response, body) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(JSON.parse(body).name);
-        }
-      });
+    for (const character of characters) {
+      try {
+        console.log(await fetch_character(character));
+      } catch (error) {
+        console.error('error:', error);
+      }
     }
   }
 });
